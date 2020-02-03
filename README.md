@@ -1,2 +1,5 @@
-# let-the-open-source-save-the-world
+# let-oss-save-the-world
+
+oss = open source souftware
+
 Eco oriented intelligence over the internet.
