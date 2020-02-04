@@ -1,5 +1,5 @@
 # let-oss-save-the-world
 
-oss = open source souftware
+OSS = Open Source Software
 
 Eco oriented intelligence over the internet.
