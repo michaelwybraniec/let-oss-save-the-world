@@ -1,0 +1,26 @@
+{
+    "database": {
+        "server": "mongodb://localhost:27017/let-oss-save-the-world-be",
+        "authdb": "admin",
+        "username": "admin",
+        "password": "#saveWithStyle2020!"
+    },
+    "application": {
+        "port": 5001,
+        "version": 0.1git
+    },
+    "output_json": {
+        "success": "",
+        "message": ""
+    },
+    "uploads": {
+        "path": ""
+    },
+    "log": {
+        "LoggerHost": "localhost",
+        "LoggerPort": "6001",
+        "LoggerKey": "",
+        "LogLocalPath": "console.log",
+        "LogExceptionPath": "crash.log"
+    }
+}
