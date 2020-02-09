@@ -1,0 +1,14 @@
+{
+  "house": {
+    "kitchen": {
+      "drinking": {
+        "bottle": {
+          "type": "plastic",
+          "price": 20,
+          "why": "",
+          "description": ""
+        }
+      }
+    }
+  }
+}

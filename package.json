@@ -1,0 +1,18 @@
+{
+    "name": "let-oss-save-the-world-be",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "dependencies": {
+        "prettier": "^1.19.1"
+    },
+    "devDependencies": {
+        "bcrypt": "^3.0.0"
+    },
+    "scripts": {
+        "start": "nodemon",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Michael Wybraniec",
+    "license": "ISC"
+}
