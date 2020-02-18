@@ -39,7 +39,7 @@ const userModel = () => {
     }
   );
 
-  userSchema.pre("save", function (next) {
+  userSchema.pre("save", function(next) {
     let user = this;
     //Only hash the password if it has been modified (or is new)
     if (!user.isModified("password")) {
@@ -51,7 +51,7 @@ const userModel = () => {
     next();
   });
 
-  userSchema.methods.comparePassword = function (candidatePassword) {
+  userSchema.methods.comparePassword = function(candidatePassword) {
     return bcrypt.compareSync(candidatePassword, this.password);
   };
 
