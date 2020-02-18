@@ -5,7 +5,7 @@ const express = require("express");
 const router = express.Router();
 const UserService = require("../../services/userService");
 const UserValidator = require("../../validators/userValidator");
-const JWT = require("../../middleware/jwt");
+const JWT = require("../../middlewares/jwt");
 
 //! GET all users.
 router.get("/users", JWT.verify, async function (req, res) {

@@ -1,6 +1,6 @@
 const debug = require("debug")("serviceAuth:");
 const UserService = require("./userService");
-const JWT = require("../middleware/jwt");
+const JWT = require("../middlewares/jwt");
 
 const login = async (email, password) => {
   let user = await UserService.findByEmail(email);

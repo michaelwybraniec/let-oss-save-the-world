@@ -3,23 +3,22 @@
 require("dotenv").config();
 
 const bodyParser = require('body-parser');
+const chalk = require('chalk');
 const express = require('express');
 const OAuthServer = require('express-oauth-server');
 const config = require('./config/config.json');
 const middlewareError = require('./src/middlewares/errors');
 const cookieParser = require("cookie-parser");
 const createError = require("http-errors");
-const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("express-flash");
-const cookieConnectMiddleware = require("./middleware/cookieConnect");
+const cookieConnectMiddleware = require("./src/middlewares/cookieConnect");
 
-const apiRoutes = require("./routes/api/");
+const apiRoutes = require("./src/routes/api/");
 
 const app = express();
 
@@ -48,7 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", apiRoutes);
-app.use("/", staticRoutes);
+//app.use("/", staticRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -74,7 +73,7 @@ app.use(middlewareError.errorHandler);
 // ==============================================================================
 
 console.log(chalk.blue(`[Starting let-oss-save-the-world API at ${new Date()}]`));
-logger.log('info', '[Starting let-oss-save-the-world ' + new Date() + ']');
+logger('info', '[Starting let-oss-save-the-world ' + new Date() + ']');
 app.listen(config.application.port,
     () => console.log(chalk.green(`Identity server is running on port ${config.application.port}`))
 );
@@ -102,4 +101,3 @@ module.exports = app;
 //};
 
 //app.use(requestTime);
-
