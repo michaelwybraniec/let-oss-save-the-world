@@ -8,7 +8,7 @@ const UserValidator = require("../../validators/userValidator");
 const JWT = require("../../middlewares/jwt");
 
 //! GET all users.
-router.get("/users", JWT.verify, async function (req, res) {
+router.get("/users", JWT.verify, async function(req, res) {
   debug("user service", req.params);
   let allUsers = await UserService.findAll();
 
