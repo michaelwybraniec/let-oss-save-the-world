@@ -6,7 +6,6 @@
     "password": "#saveWithStyle2020!"
   },
   "application": {
-    "port": 5001,
     "version": 0.1
   },
   "output_json": {
