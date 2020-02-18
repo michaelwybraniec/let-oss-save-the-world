@@ -65,9 +65,8 @@ app.use(middlewareError.errorHandler);
 
 console.log(chalk.blue(`[Starting let-oss-save-the-world API at ${new Date()}]`));
 logger("info", "[Starting let-oss-save-the-world " + new Date() + "]");
-app.listen(config.application.port, () =>
-  console.log(chalk.green(`Identity server is running on port ${config.application.port}`))
-);
+const port = process.env.PORT ? process.env.PORT : config.application.port;
+app.listen(port, () => console.log(chalk.green(`Identity server is running on port ${port}`)));
 
 module.exports = app;
 
