@@ -8,18 +8,13 @@ const express = require('express');
 const OAuthServer = require('express-oauth-server');
 const config = require('./config/config.json');
 const middlewareError = require('./src/middlewares/errors');
-const cookieParser = require("cookie-parser");
 const createError = require("http-errors");
 const cors = require("cors");
 const path = require("path");
 const logger = require("morgan");
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
-const flash = require("express-flash");
-const cookieConnectMiddleware = require("./src/middlewares/cookieConnect");
 
+const homeRoutes = require("./src/routes/home");
 const apiRoutes = require("./src/routes/api/");
-
 const app = express();
 
 const mongoose = require("mongoose");
@@ -32,20 +27,17 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 app.use(cors()); //! accept ALL external requests...
 
-app.use(flash());
-
 app.use(logger("dev"));
 app.use(express.json());
-
 app.use(
     express.urlencoded({
         extended: true
     })
 );
 
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/", homeRoutes);
 app.use("/api", apiRoutes);
 //app.use("/", staticRoutes);
 
